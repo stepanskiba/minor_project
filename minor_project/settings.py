@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'quadratic_equation.apps.QuadraticEquationConfig',
+    'atom.apps.AtomConfig',
     'algo.apps.AlgoConfig'
 
 ]

@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('quadratic_equation.urls')),
+    path('', include('atom.urls')),
     path('algo/', include('algo.urls'))
 ]
