@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Алгоc: таблица{% endblock %}
+
+
+{% block content %}
+    <h5>Таблица</h5>
+    <table class="table table-bordered">
+        <tbody style="border-top: 3.0px;">
+        <tr>
+        {% for name in field_names%}
+        <td>{{ name }}</td>
+        {% endfor %}
+        </tr>
+        {% for items in row_lists %}
+            <tr>
+                {% for item in items %}
+                    <td>
+                        {{ item }}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+
+    <p>Статистика</p>
+{#    {% autoescape off %}{{ statics.statics_val }}{% endautoescape %}#}
+    {% for item in statics.statics_val %}
+        {% for k, v in  item.items %}
+            {{ k }}:  {{ v }};
+{#            {% autoescape off %}{{ k }}:  {{ v }}; {% endautoescape %}#}
+        {% endfor %}
+    {% endfor %}
+
+
+{% endblock %}
+

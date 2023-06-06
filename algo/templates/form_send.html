@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Алгос: форма {% endblock %}
+
+{% block content %}
+    <h5>Создание формы</h5>
+{#    {% load widget_tweaks %}#}
+    <form {% url 'algo:form_send' %} method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <label for="id_submit">&nbsp;</label>
+        <button type="submit" id="id_submit">Отправить</button>
+        </label>
+    </form>
+{% endblock %}

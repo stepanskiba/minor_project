@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Алгос: результат{% endblock %}
+
+{% block content %}
+    <h5>Результат</h5>
+    <h6>{{ task }}</h6>
+    <table class="table table-bordered">
+        <tr>
+            {% for k, v in row.items %}
+                <td>{{ k }}: {{ v }}</td>
+            {% endfor %}
+            <td>{{ result }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
