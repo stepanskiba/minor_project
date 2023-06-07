@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Задача</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Задача</h1>
+    <div>
+      <h3>{{ task.name }}</h3>
+      <p>{{ task.description }}</p>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h1>Submit Solution</h1>
+    <form method="POST" action="/task/">
+      {% csrf_token %}
+      <input type="hidden" name="task_id" value="{{ task.id }}">
+      <div class="form-group">
+        <label for="solutionName">Name:</label>
+        <input type="text" class="form-control" id="solutionName" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="solutionEmail">Email:</label>
+        <input type="email" class="form-control" id="solutionEmail" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="solutionDescription">Description:</label>
+        <textarea class="form-control" id="solutionDescription" name="description" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Solution</button>
+    </form>
+  </div>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
