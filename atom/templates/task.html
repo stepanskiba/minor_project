@@ -32,14 +32,12 @@
         </div>
     </div>
 </nav>
-<div class="container mt-4">
-    <div>
-        <h1 class="display-5">{{ task.name }}</h1>
-        <h1 class="display-6">{{ task.description }}</h1>
-    </div>
+<div class="container mt-5">
+    <h1 class="display-5">{{ task.name }}</h1>
+    <h1 class="display-6">{{ task.description }}</h1>
 </div>
 
-<div class="container mt-4">
+<div class="container mt-5">
     <form method="POST" action="{% url 'atom:task' %}">
         {% csrf_token %}
         <p class="lead">Отправьте нам свое решение, если хотите получить обратную связь</p>
