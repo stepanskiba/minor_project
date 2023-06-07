@@ -12,10 +12,11 @@
 }
 
 .image {
-	background: #000;
+    background: #000;
 }
+
 .image img {
-	opacity: 0.4;
+    opacity: 0.4;
 }
 
 .navbar-collapse {
@@ -24,4 +25,5 @@
 
 body {
     background: #f8f9fa;
+    margin-bottom: 100px;
 }
