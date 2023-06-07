@@ -21,3 +21,7 @@
 .navbar-collapse {
     justify-content: center;
 }
+
+body {
+    background: #f8f9fa;
+}
