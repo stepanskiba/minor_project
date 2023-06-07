@@ -33,41 +33,40 @@ def topic(request):
     timetable_data = []
 
     # Получаем все объекты TimetableModels из базы данных
-    timetables = TimetableModels.objects.all()
+    timetables = ScheduleTopicModels.objects.all()
 
     # Создаем словарь, который будет хранить данные расписания для каждого временного слота
     schedule_data = {}
 
     # Заполняем словарь schedule_data данными из модели TimetableModels
     for timetable in timetables:
-        time_slot = timetable.time_slot
-        day = timetable.day
-        instructor = timetable.instructor
-        direction = timetable.direction
+        date = timetable.date
+        level = timetable.level
+        title = timetable.title
 
-        if time_slot not in schedule_data:
-            schedule_data[time_slot] = {}
+        if date not in schedule_data:
+            schedule_data[date] = {}
 
-        schedule_data[time_slot][day] = {'instructor': instructor, 'direction': direction}
+        schedule_data[date][level] = {'title': title}
 
     # Получаем список временных слотов, отсортированных по времени
-    time_slots = sorted(schedule_data.keys())
+    dates = sorted(schedule_data.keys())
 
     # Получаем список дней недели
-    days_of_week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+    levels = ['1', '2', '3', '4']
 
     # Создаем список словарей timetable_data для отображения в шаблоне
-    for time_slot in time_slots:
-        row_data = {'time_slot': time_slot}
+    for date in dates:
+        row_data = {'date': date}
 
-        for day in days_of_week:
-            instructor = schedule_data.get(time_slot, {}).get(day)
-            row_data[day.lower() + '_instructor'] = instructor
+        for level in levels:
+            title = schedule_data.get(date, {}).get(level)
+            row_data[level.lower() + '_title'] = title
 
         timetable_data.append(row_data)
     print(timetable_data)
     context = {'timetable_data': timetable_data}
-    return render(request, 'timetable.html', context)
+    return render(request, 'topic.html', context)
 
 def task(request):
     if request.method == 'GET':

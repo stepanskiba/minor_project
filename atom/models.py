@@ -64,7 +64,7 @@ class UserModels(models.Model):
 class ScheduleTopicModels(models.Model):
     date = models.CharField(max_length=30)
     title = models.CharField(max_length=225)
-    level = models.IntegerField()
+    level = models.CharField(max_length=20)
 
     def __str__(self):
         return f"{self.id}&{self.title}"
