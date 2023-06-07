@@ -62,7 +62,7 @@ class UserModels(models.Model):
 
 
 class ScheduleTopicModels(models.Model):
-    date = models.DateField()
+    date = models.CharField(max_length=30)
     title = models.CharField(max_length=225)
     level = models.IntegerField()
 
@@ -72,4 +72,4 @@ class ScheduleTopicModels(models.Model):
     class Meta:
         verbose_name = "topic"
         verbose_name_plural = "topics"
-        ordering = ('date',)
+        ordering = ('date', 'level')
