@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../static/main.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,19 +97,19 @@
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="surname" class="form-label"></label>
-                    <input type="text" name="surname" class="form-control" id="surname" placeholder="Фамилия">
+                    <input type="text" name="surname" class="form-control" id="surname" required placeholder="Фамилия">
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label"></label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Имя">
+                    <input type="text" name="name" class="form-control" id="name" required placeholder="Имя">
                 </div>
                 <div class="mb-3">
                     <label for="emailAddress" class="form-label"></label>
-                    <input type="email" name="email" class="form-control" id="emailAdress" placeholder="Email">
+                    <input type="email" name="email" class="form-control" id="emailAdress" required placeholder="Email">
                 </div>
                 <div class="mb-3">
                     <label for="number" class="form-label"></label>
-                    <input type="tel" name="phone" class="form-control" id="phoneNumber" placeholder="Телефон">
+                    <input type="tel" name="phone" class="form-control" id="phoneNumber" required placeholder="Телефон">
                 </div>
                 <button type="submit" class="btn btn-outline-dark">Отправить</button>
             </form>
